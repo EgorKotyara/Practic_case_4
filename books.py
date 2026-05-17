@@ -29,3 +29,37 @@ def display_all_books(books):
         else:
             print(f'{i}. "{title}" - {author}')
     print('='*60 + '\n')
+
+def calculate_average_rating(books):
+    if not books:
+        print("Список книг пуст, невозможно вычислить среднюю оценку")
+        return None
+    ratings = []
+    books_with_ratings = 0
+    for book in books:
+        rating = book.get('rating')
+        if rating is not None and isinstance(rating, (int, float)):
+            ratings.append(rating)
+            books_with_ratings += 1
+        elif rating is not None and isinstance(rating, str):
+            try:
+                numeric_rating = float(rating)
+                ratings.append(numeric_rating)
+                books_with_ratings += 1
+            except ValueError:
+                pass
+    if not ratings:
+        print('\nНет книг с оценками для расчёта средней')
+        return None
+    average = sum(ratings) / len(ratings)
+    print('\n' + '='*60)
+    print('СТАТИСТИКА ОЦЕНОК')
+    print('='*60)
+    print(f'Всего книг: {len(books)}')
+    print(f'Книг с оценками: {books_with_ratings}')
+    print(f'Сумма всех оценок: {sum(ratings):.1f}')
+    print(f'Средняя оценка: {average:.2f}')
+    print(f'Минимальная оценка: {min(ratings):.1f}')
+    print(f'Максимальная оценка: {max(ratings):.1f}')
+    print('='*60 + '\n')
+    return average
