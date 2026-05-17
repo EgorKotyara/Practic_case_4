@@ -1,3 +1,7 @@
+from itertools import count
+from typing import Counter
+
+
 def add_books(books):
   string = 'Введите название и автора книги через пробел или q для выхода'
   while True:
