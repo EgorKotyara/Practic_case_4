@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# VisualStudio
+.vs/
+.vscode/
+bin/
+obj/
+Debug/
+Release/
+*.user
+*.suo
+*.idx
