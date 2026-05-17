@@ -217,7 +217,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# VisualStudio
+# Visual Studio
 .vs/
 .vscode/
 bin/
@@ -227,3 +227,17 @@ Release/
 *.user
 *.suo
 *.idx
+*.sqlite
+
+# Пользовательские файлы
+*.userosscache
+*.vspscc
+*.vssscc
+
+# Результаты сборки
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
